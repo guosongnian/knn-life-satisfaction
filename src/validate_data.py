@@ -1,4 +1,4 @@
-"""验证项目 notebook 所需的数据集。"""
+"""验证合并分析 notebook 所需的数据集。"""
 
 from pathlib import Path
 
