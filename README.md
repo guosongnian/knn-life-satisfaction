@@ -22,8 +22,6 @@
 │   └── life_satisfaction_2010_2024.csv
 ├── notebooks/
 │   └── knn_life_satisfaction_zh.ipynb
-├── scripts/
-│   └── build_chinese_notebook.py
 ├── src/
 │   └── validate_data.py
 ├── .gitignore
