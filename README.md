@@ -2,7 +2,7 @@
 
 这是一个完整的数据科学分析项目。项目使用 NumPy 和 pandas 从零实现 **k 近邻（k-NN）回归**，根据国家的人均 GDP 和就业率预测生活满意度。
 
-原有三份课程 notebook 已合并为一份完整中文分析，删除了重复的数据读取、变量准备和交叉验证代码，并补充了中文注释、基线比较、结果解释与项目局限。
+**[查看完整分析 notebook](notebooks/knn_life_satisfaction.ipynb)**
 
 ## 项目亮点
 
@@ -19,11 +19,9 @@
 ```text
 .
 ├── data/
-│   └── life_satisfaction_2010_2024.csv
+│   └── life_satisfaction_2011_2024.csv
 ├── notebooks/
-│   └── knn_life_satisfaction_zh.ipynb
-├── src/
-│   └── validate_data.py
+│   └── knn_life_satisfaction.ipynb
 ├── .gitignore
 ├── NOTICE.md
 ├── README.md
@@ -47,7 +45,7 @@ k-NN 对日本的最终预测结果：
 | 实际生活满意度 | 6.147 |
 | 绝对误差 | 0.509 |
 
-线性回归在整体留一验证中的平均误差略低于 k-NN，但 k-NN 对日本这一单独测试样本的误差更小。这说明不能只根据一个测试样本判断模型优劣。
+线性回归在整体留一验证中的平均误差低于 k-NN，因此如果目标是从候选模型中选择整体表现更好的模型，当前结果支持线性回归。日本部分保留 k-NN 预测，是为了完整展示 k-NN 工作流程；不能利用日本单个样本的结果反向选择模型。
 
 ## 运行方法
 
@@ -59,12 +57,6 @@ source .venv/bin/activate          # Windows：.venv\Scripts\activate
 python -m pip install -r requirements.txt
 ```
 
-验证数据集：
-
-```bash
-python src/validate_data.py
-```
-
 启动 Jupyter：
 
 ```bash
@@ -74,7 +66,7 @@ jupyter lab
 然后打开：
 
 ```text
-notebooks/knn_life_satisfaction_zh.ipynb
+notebooks/knn_life_satisfaction.ipynb
 ```
 
 notebook 同时支持从仓库根目录或 `notebooks/` 目录启动 Jupyter。
@@ -96,7 +88,7 @@ notebook 同时支持从仓库根目录或 `notebooks/` 目录启动 Jupyter。
 
 ## 分析方法
 
-1. 检查数据完整性并筛选 2024 年数据。
+1. 在 notebook 中检查字段、缺失值、数值类型和重复国家，再筛选 2024 年数据。
 2. 将日本从建模数据中完全分离。
 3. 使用韩国演示单特征最近邻预测。
 4. 说明多特征距离中的尺度问题并进行标准化。
