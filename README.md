@@ -23,8 +23,6 @@
 │   └── life_satisfaction_2011_2024.csv
 ├── notebooks/
 │   └── knn_life_satisfaction.ipynb
-├── tests/
-│   └── test_smoke.py
 ├── .github/workflows/ci.yml
 ├── knn_life_satisfaction.py
 ├── .gitignore
@@ -80,13 +78,7 @@ notebooks/knn_life_satisfaction.ipynb
 python knn_life_satisfaction.py
 ```
 
-notebook 同时支持从仓库根目录或 `notebooks/` 目录启动 Jupyter。
-
-数据结构可以通过不依赖 Jupyter 的快速测试验证：
-
-```bash
-python -m unittest discover -s tests -v
-```
+notebook 同时支持从仓库根目录或 `notebooks/` 目录启动 Jupyter。GitHub Actions 会自动检查 Python 语法并运行脚本。
 
 ## 数据字段
 
