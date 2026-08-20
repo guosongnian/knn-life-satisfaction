@@ -13,6 +13,7 @@
 - 与训练集均值和线性回归基线进行比较。
 - 将日本完整保留为最终测试样本。
 - notebook 已保存图表和关键运行结果，可直接在 GitHub 中预览。
+- 提供可直接运行的 [`knn_life_satisfaction.py`](knn_life_satisfaction.py)，Notebook 与脚本共用相同方法逻辑。
 
 ## 项目结构
 
@@ -22,6 +23,10 @@
 │   └── life_satisfaction_2011_2024.csv
 ├── notebooks/
 │   └── knn_life_satisfaction.ipynb
+├── tests/
+│   └── test_smoke.py
+├── .github/workflows/ci.yml
+├── knn_life_satisfaction.py
 ├── .gitignore
 ├── NOTICE.md
 ├── README.md
@@ -69,7 +74,19 @@ jupyter lab
 notebooks/knn_life_satisfaction.ipynb
 ```
 
+也可以直接运行完整 Python 版本：
+
+```bash
+python knn_life_satisfaction.py
+```
+
 notebook 同时支持从仓库根目录或 `notebooks/` 目录启动 Jupyter。
+
+数据结构可以通过不依赖 Jupyter 的快速测试验证：
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ## 数据字段
 
